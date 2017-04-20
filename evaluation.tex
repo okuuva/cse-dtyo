@@ -9,22 +9,22 @@ This chapter answers the research questions introduced in the chapter \ref{sect:
 The evaluation utilizes a set of compiled Linux LKMs and several Linux based firmware images. The
 LKM binaries are used in the learning phase to teach the unique signatures of each module to the
 scanner. The firmware images with known kernel configuration are then scanned to test the detection
-rate of the new signatures.
+rate of the new signatures. NVD is utilized in mapping known vulnerabilities of the kernel modules
+to recognized components.
 
-Three sets of results are gathered. First only the modules in the firmwares are taught to the
-scanner and the firmwares are scanned. Looking at the results we can determine whether the small
-footprint of the modules is enough to generate viable signatures that can be reliably detected from
-the firmware binaries.
+Two sets of results are gathered. First only the modules known to be included in the test
+firmwares are taught to the scanner and the firmwares are scanned. Looking at the results we can
+determine whether the small footprint of the modules is enough to generate viable signatures that
+can be reliably detected from the firmware binaries.
 
-In the second phase the same firmwares are compiled for different processor architecture and
-scanned in order to see if the signatures are platform independent.
-
-In the third phase involves mass teaching of different modules and rescanning the firmwares to see
+The second phase involves mass teaching of different modules and rescanning the firmwares to see
 if the added number of signatures reduce the size of unique signatures so much that the scan
 results become unreliable due to growing number of false positives and false negatives.
 
 The performance of the system is being measured by comparing the list of identified Linux LKMs from
-the firmware binary to the list of LKMs known to be present in the binary.
+the firmware binary to the list of LKMs known to be present in the binary. The number of reported
+vulnerabilities in the scan results is also compared before and after mapping the vulnerabilities to
+LKMs affected.
 
 \section{Test setup}
 
