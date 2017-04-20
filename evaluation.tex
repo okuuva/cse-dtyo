@@ -6,7 +6,22 @@ This chapter answers the research questions introduced in the chapter \ref{sect:
 
 \section{Evaluation outline}
 
-Evaluation outline be here.
+The evaluation utilizes a set of compiled Linux LKMs and several Linux based firmware images. The
+LKM binaries are used in the learning phase to teach the unique signatures of each module to the
+scanner. The firmware images with known kernel configuration are then scanned to test the detection
+rate of the new signatures.
+
+Three sets of results are gathered. First only the modules in the firmwares are taught to the
+scanner and the firmwares are scanned. Looking at the results we can determine whether the small
+footprint of the modules is enough to generate viable signatures that can be reliably detected from
+the firmware binaries.
+
+In the second phase the same firmwares are compiled for different processor architecture and
+scanned in order to see if the signatures are platform independent.
+
+In the third phase involves mass teaching of different modules and rescanning the firmwares to see
+if the added number of signatures reduce the size of unique signatures so much that the scan
+results become unreliable due to grow number of false positives and false negatives.
 
 \section{Test setup}
 
