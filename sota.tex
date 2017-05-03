@@ -1,5 +1,27 @@
 % State of the Art Chapter
 
+\section{Software Composition Analysis}
+
+Software composition analysis has steadily raised its profile over the years \cite{sauce}. While it
+still hasn't quite reached a mainstream status yet, it has been made available for the masses by
+actors such as Docker with the introduction of Docker Security Scan in Docker Hub and Docker Cloud
+hosting services \cite{dockerscan}.
+
+Here be some academics.
+
+There are multiple commercial SCA solutions available from providers such as Black Duck
+\cite{sauce}, Veracode \cite{sauce}, WhiteHat security \cite{sauce}, Whitesource \cite{sauce} and
+Synopsys \cite{sauce}. The main purpose of these products is to report license information and
+known vulnerabilities of the identified third party libraries from the system under test. There
+are multiple different ways to identify the third party components. One common way is to statically
+analyse build files from the source code repository and deduce what third party libraries are
+included when the project is compiled. Another way is to try to figure out what third party
+library the analyzed code belongs to.
+
+\subsection{Static Binary Analysis}
+
+Static binary analysis is conducted by analyzing the compiled binary without actually executing it.
+
 \section{Linux Kernel}
 
 Blah.
@@ -8,10 +30,3 @@ Blah.
 
 Blah.
 
-\section{Software Composition Analysis}
-
-SCA be here.
-
-\subsection{Static Binary Analysis}
-
-SBA be here.
