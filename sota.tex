@@ -31,6 +31,13 @@ to figure out what third party library the analyzed code belongs to.
 \subsection{Static Binary Analysis}
 
 Static binary analysis is conducted by analyzing the compiled binary without actually executing it.
+Working with the binary has some upsides compared to source code: by analyzing the binary we are
+analyzing the very same thing the end users are using, thus eliminating the possibility of some
+false positives which could result in source code analysis when some or all third party component
+dependencies are included using dynamic links by the compiler. There is also the obvious benefit of
+not needing to have an access to the source code, which is usually hard or impossible with
+proprietary software. However, like Song et al. point out \cite{song2008bitblaze}, there are some
+serious down sides to it as well, like additional complexity compared to source code analysis.
 
 \section{Linux Kernel}
 
