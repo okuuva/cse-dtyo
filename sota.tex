@@ -39,6 +39,16 @@ serious down sides to it as well, like additional complexity compared to source 
 making the analysis architecture independent, i.e. supporting binaries compiled for different
 processor architectures such as ARM, x86 and MIPS.
 
+There are several different methods that can be utilised when conducting SBA. One quite common
+approach is using some intermediate language by first running the binary through a disassembler,
+then changing the instructions to the IL and finally running the analysis on the resulting pseudo
+assembly code \cite{song2008bitblaze, brumley2011bap}. This approach has the advantage of being
+more or less architecture independent, given that the tool that converts assembly instructions to
+the IL can handle the varying assembly languages of different processor architectures. The
+downsides of this method are that it's quite complex, having a couple of extra steps (disassembly,
+reassembly to IL) before the actualy analysis phase, it's dependent on the disassembler and the
+reassembler needs upkeep in order to maintain support for all different processor architectures.
+
 \section{Linux Kernel}
 
 Blah.
