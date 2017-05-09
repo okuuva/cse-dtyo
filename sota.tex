@@ -35,7 +35,9 @@ false positives which could result in source code analysis when some or all thir
 dependencies are included using dynamic links by the compiler. There is also the obvious benefit of
 not needing to have an access to the source code, which is usually hard or impossible with
 proprietary software. However, like Song et al. point out \cite{song2008bitblaze}, there are some
-serious down sides to it as well, like additional complexity compared to source code analysis.
+serious down sides to it as well, like additional complexity compared to source code analysis and
+making the analysis architecture independent, i.e. supporting binaries compiled for different
+processor architectures such as ARM, x86 and MIPS.
 
 \section{Linux Kernel}
 
@@ -44,4 +46,3 @@ Blah.
 \subsection{Linux Kernel Modules}
 
 Blah.
-
