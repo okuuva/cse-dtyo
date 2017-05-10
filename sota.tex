@@ -49,6 +49,25 @@ downsides of this method are that it's quite complex, having a couple of extra s
 reassembly to IL) before the actual analysis phase, it's dependent on the disassembler and the
 reassembler needs upkeep in order to maintain support for all different processor architectures.
 
+Another common approach in SBA according to Moser, Schmidt et al. \cite{moser2007limits,
+schmidt2009static} is signature matching which is mostly used in virus scanners. In this approach,
+a signature is generated from the compontents that need to be identified and stored into a
+database. This is called the teaching phase. Then in the scanning phase, signatures are being
+extracted from the scanned binary and compared against the signatures in the database. If the
+extracted signature matches a signature in the database, a match is found and the component can be
+said to be included in the scanned binary with some level of certainty. The signature can be
+anything depending on the implementation as long as it's unique for each component. A few common
+signature types are bytecode signatures, where certain bytecode sequences act as unique signature
+and string matching, where static strings residing on the read only section of the binary are used.
+
+The upside of signature based matching is that signatures can be architecture independent to some
+extent, especially when using string matching, but on the other hand it requires every component
+being separately taught as it can't detect new components without a having a signature of it in the
+database. While this is a huge shortcoming of this approach on virus scanners, it's not nearly as
+critical in the domain of SCA where missing components can be added to the database when the
+shortcomings are detected and the component authors aren't usually deliberately trying to obfuscate
+their work unlike the malware producers.
+
 \section{Linux Kernel}
 
 Blah.
