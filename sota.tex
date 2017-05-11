@@ -68,6 +68,13 @@ critical in the domain of SCA where missing components can be added to the datab
 shortcomings are detected and the component authors aren't usually deliberately trying to obfuscate
 their work unlike the malware producers.
 
+There are some other less widely adopted matching methods, like symbol table analysis of ELF
+binaries and using Aho-Corasick state machine \cite{aho1975efficient}. Väyrynen explored these
+methods and compared them against one of the top commercial products at the time, Codenomicon
+AppCheck \cite{vayrynen2014finding}. While these novel solutions showed some real promise, they
+still fell short against the commercial solution, given all the time and effort put into it over
+the years of its development.
+
 Besides the few academic proof of concept implementations like BitBlaze \cite{song2008bitblaze} and
 BAP \cite{brumley2011bap}, there are couple of commercially available products as well, like the
 aforementioned Black Duck HUB \cite{blackduckhub} and Protecode Supply Chain by Synopsys
