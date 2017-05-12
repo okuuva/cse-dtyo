@@ -1,10 +1,21 @@
 % Introduction Chapter
 
-Introduction be here.
-
 \section{Background and motivation}
 
-Blah.
+Modern software development isn't about writing everything from scratch, it's more about selecting
+the right ready-made pieces and gluing them together. As the use of open-source software (OSS) is
+on a steady rise even in the proprietary software products \cite{deshpande2008total}, the attack
+surface of the programs has too increased from the in-house code to the third-party components.
+
+Linux is by far the most widely used operating system (OS) in the world \cite{blah}. It is used
+everywhere from tiniest embedded systems \cite{picotux} to the biggest super computers
+\cite{top500linuxshare}. It also contains a notable number of known vulnerabilities
+\cite{cvedetailslinuxkernel}, holding at the time of writing the somewhat questionable title of the
+most vulnerable product according to CVE Details \cite{cvedetailstop50}. However, many of the
+reported vulnerabilities actually affect some drivers, network stack or filesystem handlers instead
+of the kernel core itself. These subcomponents of the kernel are usually packed as kernel modules
+(LKM) \cite{blah}, meaning that all vulnerabilities incorrectly reported for the kernel are invalid
+if the system doesn't contain the actual vulnerable modules.
 
 \section{Research objectives}
 \label{sect:questions}
