@@ -20,6 +20,13 @@ if the system doesn't contain the actual vulnerable modules.
 Should I have third paragraph here? And if so what would it be about?
 
 \section{Research objectives}
+
+The main emphasis of this thesis is to identify what LKM are included with the Linux kernel in a
+given input binary. This is achieved by generating a unique signature for each LKM. These
+signatures are then seached from the given input binary. If large enough proportion of a signature
+is found from the input binary, then that LKM is concidered to be found from it. A Python
+implementation is developed for this purpose.
+
 \label{sect:questions}
 
 The research questions are the following:
