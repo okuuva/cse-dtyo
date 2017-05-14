@@ -27,6 +27,30 @@ signatures are then seached from the given input binary. If large enough proport
 is found from the input binary, then that LKM is concidered to be found from it. A Python
 implementation is developed for this purpose.
 
+The system has two phases, teaching phase where unique signatures are being generated from the LKM
+and saved to the database and scanning phase where signatures extracted from the input binary are
+being compared against those in the database to determine what known LKM, if any, are part of the
+said input binary.
+
+The signature extraction and matching utilises the same algorithm developed for Protecode Supply
+Chain, previously known as Codenomicon AppCheck, developed by Synopsys Finland Ltd. This
+implementation was chosen as it has previously proven to be very effective and efficient in finding
+other open-source software (OSS) components from binary input \cite{vayrynen2014finding}.
+
+The secondary objective is to be able to detect what included LKM are loaded in runtime using
+static analysis only. The input binaries might contain some excess LKM that aren't actually loaded
+at runtime. Being able to detect what included LKM are really in use in the given input binary at
+least to some extent could bring the number of false positives in vulnerability reporting down even
+further and give users a hint about possibly misconfigured kernel in case of large number of unused
+LKM in the input binary.
+
+One big concern is the quality of vulnerability data of Linux kernel and LKM in National
+Vulnerability Database (NVD). Given that so many of the vulnerabilities actually affecting the LKM
+are being incorrectly reported to affect the Linux kernel core, it might be impractical to use the
+NVD data feed as is to pinpoint the vulnerabilities to correct LKM without curation. As the amount
+of NVD entries tied to Linux kernel, such a massive data curation operation is out of the scope of
+this thesis.
+
 Given the emphasis of the thesis, the research questions are the following:
 
 \label{sect:questions}
